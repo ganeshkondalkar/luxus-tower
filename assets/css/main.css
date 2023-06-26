@@ -1,0 +1,380 @@
+/*---------------------------------------------------------
+ 1. Reset & Globals
+-------------------------------------------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #595a5c;
+  /*
+  	MAC Font Flikering issue
+  	Thanks to:
+  	http://stackoverflow.com/questions/21278020/font-weight-turns-lighter-on-mac-safari
+  */
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-smoothing: subpixel-antialiased;
+  background-color: #081123;
+}
+
+header .nav-container a.logo img, .banner img,
+.gmap img, .about #mainContent .row img, .project-status #mainContent img, .plan #mainContent img, .contact #mainContent img {
+  border: 0;
+  height: auto;
+  width: 100%;
+}
+
+header .corp-logo {
+  float: left !important;
+}
+
+header .contact, .project-status #mainContent .badge-title, .plan #mainContent .badge-title {
+  background: url("../img/bg-badge.png") no-repeat top center;
+  background-size: 100% auto;
+}
+
+/* ---------------------------------------------------------
+ 2. Loader Component
+-------------------------------------------------------- */
+#loader {
+  height: 200px;
+  text-align: center;
+  white-space: nowrap;
+}
+#loader:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+#loader .inner {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+ 3. Header Component
+-------------------------------------------------------- */
+header {
+  position: relative;
+  z-index: 1;
+}
+header .corp-logo {
+  padding: 10px;
+}
+header .contact {
+  float: right;
+}
+@media screen and (min-width: 768px) {
+  header .contact {
+    float: none;
+    position: fixed;
+    right: 5%;
+    top: 0;
+  }
+}
+header address {
+  font-size: 13px;
+  color: #fff;
+  display: inline-block;
+  padding: 10px;
+}
+header .nav-container {
+  padding: 0;
+}
+header .nav-container .nav-border {
+  height: 20px;
+  background: #c59952;
+}
+header .nav-container nav {
+  text-align: center;
+}
+header .nav-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header .nav-container li {
+  display: inline-block;
+  padding: 0 5px;
+  margin: 0 1% -4px;
+  float: none;
+}
+header .nav-container li:first-child {
+  margin-left: 0;
+}
+header .nav-container li:last-child {
+  margin-right: 0;
+}
+header .nav-container li.active {
+  border-bottom: 4px solid #c59952;
+}
+@media screen and (max-width: 774px) {
+  header .nav-container li {
+    margin: 0 0.5% -4px;
+  }
+}
+header .nav-container li a {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* ---------------------------------------------------------
+ 4. Main Content Component
+-------------------------------------------------------- */
+#mainContent {
+  position: relative;
+  padding: 0;
+  background: #0a1630;
+}
+#mainContent .template-container {
+  text-align: justify;
+  color: #fff;
+  position: absolute;
+  top: 20%;
+  width: 100%;
+}
+#mainContent .template-container .right-text {
+  text-align: right;
+  float: right;
+}
+
+#myModal .img-responsive {
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+ 5. Home Content
+-------------------------------------------------------- */
+.home #mainContent .banner {
+  margin-top: 5%;
+}
+.home #mainContent #rera-info hr {
+  margin: 5px 0;
+}
+.home #mainContent #rera-info p {
+  margin: 0;
+}
+.home #mainContent #rera-info .mr-2 {
+  margin-right: 10px;
+}
+.home #mainContent #rera-info .ml-2 {
+  margin-left: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .home #mainContent .banner {
+    margin-top: 14%;
+  }
+  .home #mainContent .template-container {
+    top: 15%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .home #mainContent .banner {
+    margin-top: 20%;
+  }
+  .home #mainContent .template-container {
+    top: 10%;
+  }
+}
+@media screen and (max-width: 880px) {
+  .home #mainContent .banner {
+    margin-top: 30%;
+  }
+}
+
+/* ---------------------------------------------------------
+ 6. About Page Content
+-------------------------------------------------------- */
+.about #mainContent a#htuhLink {
+  color: #fff;
+}
+.about #mainContent .banner {
+  margin-top: 5%;
+}
+@media screen and (max-width: 1200px) {
+  .about #mainContent .banner {
+    margin-top: 14%;
+  }
+  .about #mainContent .template-container {
+    top: 15%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .about #mainContent .banner {
+    margin-top: 20%;
+  }
+  .about #mainContent .template-container {
+    top: 10%;
+  }
+}
+@media screen and (max-width: 880px) {
+  .about #mainContent .banner {
+    margin-top: 30%;
+  }
+}
+
+/* ---------------------------------------------------------
+ 7. Project Page Content
+-------------------------------------------------------- */
+.project #mainContent {
+  background-color: #fff;
+}
+.project #mainContent .banner {
+  margin-top: 5%;
+}
+.project #mainContent .template-container {
+  top: 15%;
+}
+.project #mainContent .container * {
+  color: #595a5c;
+}
+.project #mainContent h5 {
+  margin-top: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .project #mainContent .banner {
+    margin-top: 12%;
+  }
+  .project #mainContent .template-container {
+    top: 12%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .project #mainContent .banner {
+    margin-top: 32%;
+  }
+  .project #mainContent .template-container {
+    top: 10%;
+  }
+}
+@media screen and (max-width: 925px) {
+  .project #mainContent .banner {
+    margin-top: 35%;
+  }
+}
+
+/* ---------------------------------------------------------
+ 9. Project Page Content
+-------------------------------------------------------- */
+.project-status #mainContent, .plan #mainContent {
+  padding: 100px 0;
+  background: url("../img/bg-project.jpg") repeat;
+}
+.project-status #mainContent .template-container, .plan #mainContent .template-container {
+  position: relative;
+}
+.project-status #mainContent .container, .plan #mainContent .container {
+  text-align: center;
+}
+.project-status #mainContent .badge-title, .plan #mainContent .badge-title {
+  background-size: 100% 45%;
+  float: none;
+  margin: 20px auto -30px;
+  overflow: auto;
+  padding-bottom: 6%;
+}
+.project-status #mainContent .badge-title h5, .plan #mainContent .badge-title h5 {
+  letter-spacing: 2px;
+}
+.project-status #mainContent .big-img, .plan #mainContent .big-img {
+  margin-bottom: 4%;
+}
+.project-status #mainContent .big-img .img, .plan #mainContent .big-img .img {
+  padding-right: 30px;
+  padding-left: 0;
+}
+.project-status #mainContent .flr-plan .img, .plan #mainContent .flr-plan .img {
+  padding-right: 0;
+  padding-left: 0;
+}
+.project-status #mainContent .big-img .img, .plan #mainContent .big-img .img {
+  margin: 0 auto;
+  float: none;
+}
+.project-status #mainContent .anim-box, .plan #mainContent .anim-box {
+  position: relative;
+  z-index: 1;
+}
+.project-status #mainContent .anim-box-1, .plan #mainContent .anim-box-1 {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 90%;
+}
+.project-status #mainContent .flr-plan + .flr-plan, .plan #mainContent .flr-plan + .flr-plan {
+  margin-top: 50px;
+}
+.project-status #mainContent .flr-plan .img-container, .plan #mainContent .flr-plan .img-container {
+  float: none;
+  margin: 0 auto;
+  width: 80%;
+}
+@media screen and (max-width: 767px) {
+  .project-status #mainContent .flr-plan .img, .plan #mainContent .flr-plan .img {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+/* ---------------------------------------------------------
+ 8. Project Page Content
+-------------------------------------------------------- */
+.plan #mainContent .badge-title {
+  background-size: 100% auto;
+}
+
+.plan #mainContent .badge-title {
+  margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------
+ 10. Project Page Content
+-------------------------------------------------------- */
+.downloads #mainContent .container {
+  text-align: center;
+}
+.downloads #mainContent .container > div {
+  padding-left: 0;
+}
+.downloads #mainContent .container img {
+  width: 25%;
+}
+
+/* ---------------------------------------------------------
+ 11. Project Page Content
+-------------------------------------------------------- */
+.contact #mainContent .template-container {
+  top: 15%;
+}
+.contact #mainContent .container {
+  text-align: left;
+  font-size: 14px;
+}
+.contact #mainContent .anim-box {
+  position: relative;
+  z-index: 1;
+}
+.contact #mainContent .anim-box-1 {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 89%;
+}
+
+#disclaimer {
+  color: #a7a9ac;
+}
+#disclaimer #large {
+  display: none;
+}
+
+footer {
+  font-size: 12px;
+  color: #a7a9ac;
+  border-top: 1px dashed #a7a9ac;
+}
+footer .row {
+  padding: 5px 10px 10px;
+}

@@ -1,0 +1,41 @@
+/* ---------------------------------------------------------
+ 5. Home Content
+-------------------------------------------------------- */
+.home #mainContent {
+	.banner {
+		margin-top: 5%;
+	}
+
+	#rera-info {
+		hr { margin: 5px 0; }
+		p { margin: 0; }
+		.mr-2 { margin-right: 10px; }
+		.ml-2 { margin-left: 10px; }
+	}
+	
+	@media screen and (max-width: 1200px) {
+		.banner {
+			margin-top: 14%;
+		}
+
+		.template-container {
+			top: 15%;
+		}
+	}
+
+	@media screen and (max-width: 992px) {
+		.banner {
+			margin-top: 20%;
+		}
+
+		.template-container {
+			top: 10%;
+		}
+	}
+
+	@media screen and (max-width: 880px) {
+		.banner {
+			margin-top: 30%;
+		}
+	}
+}

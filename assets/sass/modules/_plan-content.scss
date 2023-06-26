@@ -1,0 +1,14 @@
+/* ---------------------------------------------------------
+ 8. Project Page Content
+-------------------------------------------------------- */
+.plan {
+	@extend .project-status;
+}
+
+.plan #mainContent .badge-title {
+	background-size: 100% auto;
+}
+
+.plan #mainContent .badge-title {
+	margin-bottom: 20px;
+}

@@ -1,0 +1,29 @@
+/* ---------------------------------------------------------
+ 11. Project Page Content
+-------------------------------------------------------- */
+.contact #mainContent {
+	.template-container {
+		top: 15%;
+	}
+
+	.container {
+		text-align: left;
+		font-size: 14px;
+	}
+
+	.anim-box {
+		position: relative;
+		z-index: 1;
+	}
+
+	.anim-box-1 {
+		position: absolute;
+		top: 0;
+		z-index: 0;
+		width: 89%;
+	}
+
+	img {
+		@extend %img;
+	}
+}

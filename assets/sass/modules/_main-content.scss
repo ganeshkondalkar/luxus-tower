@@ -1,0 +1,32 @@
+/* ---------------------------------------------------------
+ 4. Main Content Component
+-------------------------------------------------------- */
+.banner img,
+.gmap img {
+	@extend %img;
+}
+
+#mainContent {
+	position: relative;
+	padding: 0;
+	background: #0a1630;
+
+	.template-container {
+		text-align: justify;
+		color: #fff;
+		position: absolute;
+		top: 20%;
+		width: 100%;
+
+		.right-text {
+			text-align: right;
+			float: right;
+		}
+	}
+}
+
+#myModal {
+	.img-responsive {
+		margin: 0 auto;
+	}
+}

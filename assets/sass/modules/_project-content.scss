@@ -1,0 +1,49 @@
+/* ---------------------------------------------------------
+ 7. Project Page Content
+-------------------------------------------------------- */
+.project #mainContent {
+
+	background-color: #fff;
+	
+	.banner {
+		margin-top: 5%;
+	}
+
+	.template-container {
+		top: 15%;
+	}
+	
+	.container * {
+		color: #595a5c;
+	}
+
+	h5 {
+		margin-top: 20px;
+	}
+
+	@media screen and (max-width: 1200px) {
+		.banner {
+			margin-top: 12%;
+		}
+
+		.template-container {
+			top: 12%;
+		}
+	}
+
+	@media screen and (max-width: 992px) {
+		.banner {
+			margin-top: 32%;
+		}
+
+		.template-container {
+			top: 10%;
+		}
+	}
+
+	@media screen and (max-width: 925px) {
+		.banner {
+			margin-top: 35%;
+		}
+	}
+}

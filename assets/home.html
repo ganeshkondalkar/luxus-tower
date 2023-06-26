@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<title>Luxus Tower Landing Page</title>
+	<meta content="Luxus Tower Project" name="description">
+</head>
+<body>
+	<div class="animBox"><img class="landing-anim" src="img/Landing-Page-Animation.jpg" alt="Luxus Tower Landing Page Animation"></div>
+	<div id="loadSite"><a href="index.html" id="loadSiteBtn">Enter Website</a></div>
+<style>body{margin:0;padding:0;}img{width:100%;position:relative;z-index:0;}#loadSite{text-align:right;position:fixed;top:50%;right:5%;z-index:1;width:100%;}.animBox{overflow:auto;}#loadSiteBtn{text-decoration:none;color:#fff;font-family:arial;border-radius:5px;letter-spacing:1px;padding:10px;background:rgba(0,0,0,.4);}</style>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	var $img, $imgH, animID, animTimer, pos;
+
+	function setAimation(){
+		console.log("start animation...");
+		scrollDown();
+	};
+
+	function scrollDown(){
+		animID = setInterval(function(){
+			// if(pos < $imgH){
+			if(currPos() < $imgH){
+				console.log("scrollDown");
+				window.scrollTo(0, pos++);
+			} else {
+				console.log("STOP: scrollDown");
+				clearInterval(animID);
+				// pos = $imgH;
+				scrollTop();
+			}
+		}, animTimer);
+	};
+
+	function scrollTop(){
+		animID = setInterval(function(){
+			if(pos > 0){
+				console.log("scrollTop");
+				window.scrollTo(0, pos--);
+			} else {
+				console.log("STOP: scrollTop");
+				clearInterval(animID);
+				// pos = 0;
+				scrollDown();
+			}
+		}, animTimer);
+	};
+
+	function currPos(){
+		return $(document).scrollTop() + $(window).height();
+	};
+
+	$(window).on("load", function(e){
+		$img = $(".landing-anim");
+		$imgH = $(".animBox")[0].scrollHeight;
+		animID = null;
+		animTimer = 7;
+		pos = 0;
+		setAimation();
+	});
+
+	$(window).on("resize", function(e){
+		pos = 0;
+		$imgH = $(".animBox")[0].scrollHeight;
+		clearInterval(animID);
+		setAimation();
+	});
+});
+</script>
+</body>
+</html>

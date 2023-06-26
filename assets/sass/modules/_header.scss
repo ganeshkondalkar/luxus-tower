@@ -1,0 +1,146 @@
+/*---------------------------------------------------------
+ 1. Reset & Globals
+-------------------------------------------------------- */
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #595a5c;
+	/*
+		MAC Font Flikering issue
+		Thanks to:
+		http://stackoverflow.com/questions/21278020/font-weight-turns-lighter-on-mac-safari
+	*/
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-smoothing: subpixel-antialiased;
+	background-color: #081123;
+}
+
+%img {
+	border:0;
+	height:auto;
+	width:100%;
+}
+
+%pull-left {
+	float: left !important;
+}
+
+%pull-right {
+	float: right !important;
+}
+
+%badge-background {
+	background: url("../img/bg-badge.png") no-repeat top center;
+	background-size: 100% auto;
+}
+
+/* ---------------------------------------------------------
+ 2. Loader Component
+-------------------------------------------------------- */
+#loader {
+	height: 200px;
+	text-align: center;
+	white-space: nowrap;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+
+	.inner {
+		display: inline-block;
+		vertical-align: middle;
+		width: auto;
+		margin: 0 auto;
+	}
+}
+
+/* ---------------------------------------------------------
+ 3. Header Component
+-------------------------------------------------------- */
+header {
+	position: relative;
+	z-index: 1;
+
+	.corp-logo {
+		@extend %pull-left;
+		padding: 10px;
+	}
+
+	.contact {
+		float: right;
+		@extend %badge-background;
+	}
+
+	@media screen and (min-width: 768px) {
+		.contact {
+			float: none;
+			position: fixed;
+			right: 5%;
+			top: 0;
+		}
+	}
+
+	address {
+		font-size: 13px;
+		color: #fff;
+		display: inline-block;
+		padding: 10px;
+	}
+
+	.nav-container {
+		padding: 0;
+
+		.nav-border {
+			height: 20px;
+			background: #c59952;
+		}
+
+		nav {
+			text-align: center;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			display: inline-block;
+			padding: 0 5px;
+			margin: 0 1% -4px;
+			float: none;
+	
+			&:first-child {
+				margin-left: 0;
+			}
+	
+			&:last-child {
+				margin-right: 0;
+			}
+	
+			&.active {
+				border-bottom: 4px solid #c59952;
+			}
+		}
+
+		@media screen and (max-width: 774px) {
+			li {
+				margin: 0 0.5% -4px;
+			}
+		}
+	
+		li a {
+			font-size: 12px;
+			color: #fff;
+		}
+
+		a.logo img {
+			@extend %img;
+		}
+	}
+}

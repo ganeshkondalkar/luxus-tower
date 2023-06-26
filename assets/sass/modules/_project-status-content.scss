@@ -1,0 +1,82 @@
+/* ---------------------------------------------------------
+ 9. Project Page Content
+-------------------------------------------------------- */
+.project-status {
+	#mainContent {
+		padding: 100px 0;
+		background: url("../img/bg-project.jpg") repeat;
+
+		.template-container {
+			position: relative;
+		}
+
+		.container {
+			text-align: center;
+		}
+
+		.badge-title {
+			@extend %badge-background;
+			background-size: 100% 45%;
+			float: none;
+			margin: 20px auto -30px;
+			overflow: auto;
+			padding-bottom: 6%;
+
+			h5 {
+				letter-spacing: 2px;
+			}
+		}
+
+		.big-img {
+			margin-bottom: 4%;
+		}
+
+		.big-img .img {
+			padding-right: 30px;
+			padding-left: 0;
+		}
+
+		.flr-plan .img {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+		.big-img .img {
+			margin: 0 auto;
+			float: none;
+		}
+
+		.anim-box {
+			position: relative;
+			z-index: 1;
+		}
+
+		.anim-box-1 {
+			position: absolute;
+			top: 0;
+			z-index: 0;
+			width: 90%;
+		}
+
+		.flr-plan + .flr-plan {
+			margin-top: 50px;
+		}
+
+		.flr-plan .img-container {
+			float: none;
+			margin: 0 auto;
+			width: 80%;
+		}
+
+		img {
+			@extend %img;
+		}
+
+		@media screen and (max-width: 767px) {
+			.flr-plan .img {
+				float: none;
+				margin: 0 auto;
+			}
+		}
+	}
+}
